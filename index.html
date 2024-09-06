@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Dojhoanrd</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+
+
+<!-- Sección de Bienvenida -->
+<header class="s">
+
+    <!-- Menú y botón de hamburguesa -->
+    <nav class="navbar">
+     <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+             <span class="bar"></span>
+             <span class="bar"></span>
+     </div>
+     <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+     </ul>
+    </nav>
+
+    <div id="particles-js"></div>
+
+    <div class="welcome-container">
+        <div class="welcome-text">
+            <h1>Hello, I am Jhoan Ramirez</h1>
+            <p>Web Developer</p>
+            <a href="#projects" class="btn">My projects</a>
+        </div>
+        <div class="welcome-img">
+            <img src="img/img3.png" alt="Foto de [Tu Nombre]">
+        </div>
+    </div>
+</header>
+
+
+
+
+
+<!-- Sección de proyectos -->
+<section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+        <!-- Proyecto 1 -->
+        <div class="project-card" onclick="showProjectDetails('project1')">
+            
+            <div class="project-info">
+                <h3>ToDoPro</h3>
+                <p>Task management too</p>
+                <a href="#" class="btn">More</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project-card" onclick="showProjectDetails('project2')">
+           
+            <div class="project-info">
+                <h3>Phantofi</h3>
+                <p>Office suite</p>
+                <a href="#" class="btn">More</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project-card" onclick="showProjectDetails('project3')">
+            
+            <div class="project-info">
+                <h3>Taetgen</h3>
+                <p>lWeb interface generator</p>
+                <a href="#" class="btn">More</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="project-card" onclick="showProjectDetails('project4')">
+           
+            <div class="project-info">
+                <h3>Movie search</h3>
+                <p>Movie search engine</p>
+                <a href="#" class="btn">More</a>
+            </div>
+        </div>
+
+         
+
+        
+    </div>
+
+    <!-- Div Superpuesto -->
+<div id="projectDetailsOverlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close-btn" onclick="closeProjectDetails()">&times;</span>
+        <h2 id="projectTitle"></h2>
+        <p id="projectDescription"></p>
+        <p id="projectTechnologies"></p>
+        <a href="#" id="githubLink" class="btn">GitHub</a>
+        <a href="#" id="demoLink" class="btn">Demo</a>
+    </div>
+</div>
+</section>
+
+
+
+<!-- Habilidades -->
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <!-- Habilidad 1 -->
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fa fa-code"></i> 
+            </div>
+            <div class="skill-info">
+                <h3>UX/UI Design</h3>
+                <p>Figma, Sketch, Adobe XD, Prototyping, Wireframing and User Research</p>
+            </div>
+        </div>
+
+        <!-- Habilidad 2 -->
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fa fa-database"></i>
+            </div>
+            <div class="skill-info">
+                <h3>Frontend Frameworks</h3>
+                <p>Angular, React and Vue</p>
+            </div>
+        </div>
+
+        <!-- Habilidad 3 -->
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fa fa-cloud"></i>
+            </div>
+            <div class="skill-info">
+                <h3>Frontend testing</h3>
+                <p>Jest, Mocha, React Testing Library and Cypress</p>
+            </div>
+        </div>
+
+        <!-- Habilidad 4 -->
+        <div class="skill-card">
+            <div class="skill-icon">
+                <i class="fa fa-tools"></i>
+            </div>
+            <div class="skill-info">
+                <h3>Api integration</h3>
+                <p>RESTful APIs and GraphQL</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="contact" class="contact">
+    <div class="contact-content">
+        <h2>Contact</h2>
+        <div class="contact-wrapper">
+            <div class="contact-details">
+                <div class="social-icons">
+                    
+                    <a href="https://github.com/dojhoanrd-jw" target="_blank" class="social-icon" title="Facebook">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    
+                </div>
+            </div>
+           <form class="contact-form" action="https://formspree.io/f/xjkbzrag" method="POST">
+    <h3>Send Me a Message</h3>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn">Send</button>
+</form>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Script -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/overlay.js"></script>
+  
+
+</body>
+</html>

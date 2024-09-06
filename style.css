@@ -1,0 +1,606 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+/* Estilos de Cabecera */
+header {
+    position: relative;
+    color: #fff;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Contenedor de partículas */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+}
+
+/* Estilos del menú de navegación */
+.navbar {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    z-index: 2; 
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos del botón de hamburguesa */
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+/* Menú desplegable */
+.nav-links {
+    display: flex;
+}
+
+.nav-links.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+
+/* Contenedor de bienvenida */
+.welcome-container {
+    position: relative;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    z-index: 1; 
+    text-align: center; 
+}
+.welcome-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em; 
+    margin: 0;
+    color: #fff;
+}
+
+.welcome-text p {
+    font-size: 1.2em; 
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.welcome-text .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.welcome-text .btn:hover {
+    background: #268074;
+    color: #fff;
+    border-bottom: 10px;
+    border-color: white;
+}
+
+.welcome-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.welcome-img img {
+    border-radius: 50%;
+    width: 70%;
+    max-width: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-img img:hover {
+    transform: scale(1.05); 
+}
+
+.welcome-img::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 30px;
+    border-radius: 0px;
+    background-color: #00ffdd; /* Color del punto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(150px);
+    animation: orbit 2s linear infinite;
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .welcome-container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .welcome-img {
+        order: -1; /* Mueve la imagen arriba */
+        margin-bottom: 20px; /* Espacio abajo en pantallas pequeñas */
+    }
+
+    .welcome-text {
+        order: 1; /* Mantiene el texto debajo */
+    }
+
+    .welcome-text h1 {
+        font-size: 2em; /* Tamaño de fuente más pequeño */
+    }
+
+    .welcome-text p {
+        font-size: 1em; /* Tamaño de fuente más pequeño */
+    }
+
+    .welcome-img img {
+        width: 80%; /* Tamaño de imagen más grande en pantallas pequeñas */
+        max-width: 200px; /* Tamaño máximo de la imagen más pequeño */
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-text h1 {
+        font-size: 1.5em; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .welcome-text p {
+        font-size: 0.9em; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .welcome-img img {
+        width: 90%; /* Tamaño de imagen aún más grande en pantallas pequeñas */
+        max-width: 150px; /* Tamaño máximo de la imagen aún más pequeño */
+    }
+}
+
+
+
+
+/* Estilos de la sección de proyectos */
+.projects {
+    height: 100%; 
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #fff; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff; 
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    width: 100%;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #fff; /* Título en blanco */
+}
+
+.project-info p {
+    font-size: 1em;
+    color: #bbb; /* Descripción en gris claro */
+    margin-bottom: 15px;
+}
+
+.project-info .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f); /* Color del botón */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.project-info .btn:hover {
+    background: #268074; 
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+@media (max-width: 480px) {
+    .project-card {
+        width: 40%; /* Una tarjeta por fila en pantallas muy pequeñas */
+        height: 40%;
+    }
+}
+
+
+/* Estilos del overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay-content {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.overlay h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+.overlay .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+.overlay .btn:hover {
+    background: #268074;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/* Estilos para la Sección de Habilidades */
+.skills {
+    background-color: #0f0f0f; 
+    color: #fff;
+    padding: 5px 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.skill-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: calc(40% - 20px); /* Dos tarjetas por fila en pantallas grandes */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.skill-icon {
+    font-size: 3em;
+    color: #00ffdd;
+    margin-bottom: 10px;
+}
+
+.skill-info h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.skill-info p {
+    font-size: 1.1em;
+    color: #bbb;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .skill-card {
+        width: 45%; /* Dos tarjetas por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-card {
+        width: 35%; /* Una tarjeta por fila en pantallas muy pequeñas */
+    }
+}
+
+
+
+
+
+
+
+/* Estilos para la Sección de Contacto */
+.contact {
+    background: #1a1a1a; /* Fondo oscuro */
+    color: #fff;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-content {
+    width: 90%;
+    max-width: 1200px;
+    padding: 10px;
+
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: #00ffdd;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+.contact-form {
+    background: #333;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.contact-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: #268074;
+    color: #fff;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-icons {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
