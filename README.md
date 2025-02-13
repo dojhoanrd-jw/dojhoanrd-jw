@@ -18,7 +18,7 @@ I am motivated by the constant evolution of the industry and how software can tr
 ### 🖥️ Languages
 🚀 **JavaScript** - React, Angular, Node.js  
 ⚙️ **C#** - .NET Core, ASP.NET  
-🐍 **Python** - Django, Flask  
+🐍 **Python** - Flask  
 
 ### 🗄️ Databases
 🔹 **Relational** - SQL Server, PostgreSQL, MySQL  
