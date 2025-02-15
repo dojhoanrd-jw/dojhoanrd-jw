@@ -277,10 +277,14 @@ h1 {
     display: flex;
     overflow-x: auto;
     gap: 30px;
-    padding-bottom: 10px;
     width: 100%;
     cursor: grab;
-    justify-content: space-evenly;
+    justify-content: center; 
+    scroll-snap-type: x mandatory;
+    padding: 10px 40px;
+    scroll-padding-left: 40px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -295,14 +299,12 @@ h1 {
     user-select: none;
     margin-bottom: 30px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    scroll-snap-align: start;
 }
 
-.project-card:first-of-type {
-    margin-left: 30px;
-}
-
+.project-card:first-of-type,
 .project-card:last-of-type {
-    margin-right: 30px;
+    margin: 0;
 }
 
 .project-card img {
@@ -374,19 +376,14 @@ h1 {
 
 @media (max-width: 768px) {
     .projects-container {
+        padding: 10px 20px; 
+        scroll-padding-left: 20px; 
         gap: 20px;
+        justify-content: flex-start; 
     }
 
     .project-section h2 {
         margin-bottom: 30px;
-    }
-
-    .project-card:first-of-type {
-        margin-left: 20px;
-    }
-
-    .project-card:last-of-type {
-        margin-right: 20px;
     }
 }
 
@@ -411,11 +408,15 @@ h1 {
     display: flex;
     gap: 2rem;
     overflow-x: auto;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
+    width: 100%;
     cursor: grab;
     user-select: none;
-    justify-content: space-evenly;
+    justify-content: center;
+    scroll-snap-type: x mandatory;
+    padding: 10px 40px; 
+    scroll-padding-left: 40px;
+    margin: 0 auto; 
+    box-sizing: border-box;
 }
 
 .skills-container::-webkit-scrollbar {
@@ -438,8 +439,9 @@ h1 {
     width: 300px;
     min-width: 300px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    scroll-snap-align: center;
+    scroll-snap-align: start; 
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin: 0; 
 }
 
 .category-title {
@@ -499,6 +501,13 @@ h1 {
 
     .skill-category {
         padding: 1rem;
+    }
+
+    .skills-container {
+        padding: 10px 20px; 
+        scroll-padding-left: 20px; 
+        gap: 20px;
+        justify-content: flex-start; 
     }
 }
 
