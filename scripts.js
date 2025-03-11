@@ -1,5 +1,8 @@
 const mobileMenu = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
+const header = document.querySelector('nav');
+
+let lastScrollY = window.scrollY;
 
 const handleMobileMenuClick = (e) => {
     e.stopPropagation();
@@ -50,11 +53,21 @@ const enableDragScroll = (containerSelector) => {
     container.addEventListener('mousemove', drag);
 };
 
+const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+        header.classList.add('hide');
+    } else {
+        header.classList.remove('hide');
+    }
+    lastScrollY = window.scrollY;
+};
+
 mobileMenu.addEventListener('click', handleMobileMenuClick);
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', handleNavLinkClick);
 });
 document.addEventListener('click', handleDocumentClick);
+window.addEventListener('scroll', handleScroll);
 
 enableDragScroll('.projects-container');
 enableDragScroll('.skills-container');

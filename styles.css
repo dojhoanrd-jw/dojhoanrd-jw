@@ -67,6 +67,11 @@ nav {
     z-index: 1000;
     height: 10%;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+nav.hide {
+    transform: translateY(-100%);
 }
 
 .logo {
@@ -279,7 +284,7 @@ h1 {
     gap: 30px;
     width: 100%;
     cursor: grab;
-    justify-content: center; 
+    justify-content: flex-start;
     scroll-snap-type: x mandatory;
     padding: 10px 40px;
     scroll-padding-left: 40px;
@@ -302,15 +307,18 @@ h1 {
     scroll-snap-align: start;
 }
 
-.project-card:first-of-type,
+.project-card:first-of-type {
+    margin-left: 40px;
+}
+
 .project-card:last-of-type {
-    margin: 0;
+    margin-right: 40px;
 }
 
 .project-card img {
     width: 100%;
     aspect-ratio: 16 / 9;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -376,10 +384,18 @@ h1 {
 
 @media (max-width: 768px) {
     .projects-container {
-        padding: 10px 20px; 
-        scroll-padding-left: 20px; 
+        padding: 10px 20px;
+        scroll-padding-left: 20px;
         gap: 20px;
-        justify-content: flex-start; 
+        justify-content: flex-start;
+    }
+
+    .project-card:first-of-type {
+        margin-left: 20px;
+    }
+
+    .project-card:last-of-type {
+        margin-right: 20px;
     }
 
     .project-section h2 {
@@ -413,9 +429,9 @@ h1 {
     user-select: none;
     justify-content: center;
     scroll-snap-type: x mandatory;
-    padding: 10px 40px; 
+    padding: 10px 40px;
     scroll-padding-left: 40px;
-    margin: 0 auto; 
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
@@ -439,9 +455,9 @@ h1 {
     width: 300px;
     min-width: 300px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    margin: 0; 
+    margin: 0;
 }
 
 .category-title {
@@ -504,10 +520,10 @@ h1 {
     }
 
     .skills-container {
-        padding: 10px 20px; 
-        scroll-padding-left: 20px; 
+        padding: 10px 20px;
+        scroll-padding-left: 20px;
         gap: 20px;
-        justify-content: flex-start; 
+        justify-content: flex-start;
     }
 }
 
