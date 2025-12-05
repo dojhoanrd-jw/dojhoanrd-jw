@@ -1,7 +1,4 @@
-<p align="center">
-  <img src="./img/Cover.png" alt="Cover Image" width="100%" />
-</p>
-
+![Banner Image](./img/Banner.png)
 ---
 
 # 👋 Hi, I'm Jhoan J. Ramirez!
