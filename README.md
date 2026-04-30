@@ -82,7 +82,7 @@ I am motivated by the constant evolution of the industry and how software can tr
 
 **Relational (SQL)**
 
-![SQL Server](https://img.shields.io/static/v1?label=&message=SQL%20Server&color=000000&labelColor=ffffff&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0NDMjkyNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiPjxlbGxpcHNlIGN4PSIxMiIgY3k9IjUiIHJ4PSI5IiByeT0iMyIvPjxwYXRoIGQ9Ik0zIDV2MTRhOSAzIDAgMCAwIDE4IDBWNSIvPjxwYXRoIGQ9Ik0zIDEyYTkgMyAwIDAgMCAxOCAwIi8%2BPC9nPjwvc3ZnPg%3D%3D&style=flat)
+![SQL Server](./img/badges/sqlserver.svg)
 ![PostgreSQL](https://img.shields.io/static/v1?label=&message=PostgreSQL&color=000000&labelColor=ffffff&logo=postgresql&style=flat)
 ![MySQL](https://img.shields.io/static/v1?label=&message=MySQL&color=000000&labelColor=ffffff&logo=mysql&style=flat)
 
