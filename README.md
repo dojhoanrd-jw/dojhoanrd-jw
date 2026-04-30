@@ -144,7 +144,7 @@ I am motivated by the constant evolution of the industry and how software can tr
 
 ## 🤝 Open Source Contributions
 
-[![TanStack](https://img.shields.io/static/v1?label=&message=TanStack%20Form&color=000000&labelColor=ffffff&logo=tanstack&logoColor=FF4154&style=flat)](https://github.com/TanStack/form/commits/main/?author=dojhoanrd-jw)
+[![TanStack](https://img.shields.io/static/v1?label=&message=TanStack%20Form&color=000000&labelColor=ffffff&logo=tanstack&logoColor=000000&style=flat)](https://github.com/TanStack/form/commits/main/?author=dojhoanrd-jw)
 
 ---
 
