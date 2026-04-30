@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#004aad">
+    <meta name="author" content="Jhoan J. Ramirez">
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"
+            integrity="sha384-WkEPiGpA8IY4DDeMxmVWYU+J3FdQ1CUSC9w1HiBdQOAk79Zwdbog/5HHsl3keRaM"
+            crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="page-projects">
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <header id="site-header">
+            <nav aria-label="Main navigation">
+                <a href="../../#home" class="nav-logo" aria-label="Home">
+                    <img src="../../img/favicon.png" alt="JR Logo" width="30" height="26">
+                </a>
+                <div class="nav-links" id="nav-links" role="menubar">
+                    <a href="../../#home" role="menuitem" class="nav-link">Home</a>
+                    <a href="../../#skills" role="menuitem" class="nav-link">Skills</a>
+                    <a href="./" role="menuitem" class="nav-link active">Projects</a>
+                    <a href="../../#contributions" role="menuitem" class="nav-link">Contributions</a>
+                    <a href="../../#contact" role="menuitem" class="nav-link">Contact</a>
+                    <div class="nav-indicator" id="nav-indicator"></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </header>
+
+    <main>
+        <section class="page-hero" id="top">
+                    <div class="page-hero-content">
+                        <span class="section-tag">Portfolio</span>
+                        <h1 class="page-hero-title">All Projects</h1>
+                        <p class="page-hero-subtitle">A complete look at the digital products, experiments and ideas I've shipped — from frontend apps to cloud-native systems and AI integrations.</p>
+                        <a href="../../#home" class="page-hero-back">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                            Back to home
+                        </a>
+                    </div>
+                </section>
+        <section class="projects-section projects-page-section">
+                    <div class="project-filters" data-animate="fade-up">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="fintech">Fintech</button>
+                        <button class="filter-btn" data-filter="retail">Retail</button>
+                        <button class="filter-btn" data-filter="productivity">Productivity</button>
+                        <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+                        <button class="filter-btn" data-filter="data">Data</button>
+                        <button class="filter-btn" data-filter="ai">AI</button>
+                    </div>
+                    <div class="projects-grid" id="projects-grid">
+                        <article class="project-card" data-category="productivity" data-animate="scale-in" data-delay="100">
+                            <div class="project-image">
+                                <img src="../../img/todopro.png" alt="ToDoPro - Project and task management platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Productivity</span>
+                                <h3 class="project-title">ToDoPro</h3>
+                                <p class="project-description">Project and task management platform with intuitive boards, customizable workflows, and real-time collaboration.</p>
+                                <div class="project-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">Firebase</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/ToDoPro" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View ToDoPro source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://todopro-proj.web.app/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View ToDoPro live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="entertainment" data-animate="scale-in" data-delay="200">
+                            <div class="project-image">
+                                <img src="../../img/moviesearch.png" alt="Movie Search - Movie information search app" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Entertainment</span>
+                                <h3 class="project-title">Movie Search</h3>
+                                <p class="project-description">Web app for searching movie information — title, synopsis, rating, cast, release date and genre, all in a responsive interface.</p>
+                                <div class="project-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">React</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Movie-search" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Movie Search source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://movie-search-proj.web.app/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Movie Search live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="retail" data-animate="scale-in" data-delay="300">
+                            <div class="project-image">
+                                <img src="../../img/ecommerce.png" alt="E-commerce - Online shopping platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Retail</span>
+                                <h3 class="project-title">E-commerce</h3>
+                                <p class="project-description">Online marketplace with shopping cart, secure payments, order management, user reviews and a recommendation system.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Angular</span>
+                                    <span class="tag">.NET</span>
+                                    <span class="tag">PostgreSQL</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/E-commerce" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View E-commerce source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://e-commerce-1-1mki.onrender.com" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View E-commerce live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="ai" data-animate="scale-in" data-delay="100">
+                            <div class="project-image">
+                                <img src="../../img/taskbot.png" alt="Taskbot - Multi-chatbot integration platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">AI Tools</span>
+                                <h3 class="project-title">Taskbot</h3>
+                                <p class="project-description">Web app that integrates multiple chatbots to automate document editing, code generation, icon design and data analysis tasks.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Taskbot" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Taskbot source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://taskbot-proj.netlify.app" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Taskbot live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="data" data-animate="scale-in" data-delay="200">
+                            <div class="project-image">
+                                <img src="../../img/datanalisis.png" alt="Datanalisis - Data analysis web application" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Data Analytics</span>
+                                <h3 class="project-title">Datanalisis</h3>
+                                <p class="project-description">Web app designed to make data analysis intuitive — explore, process and visualize datasets quickly and easily.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">Pandas</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Datanalisis" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Datanalisis source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://datanalisis.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Datanalisis live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="fintech" data-animate="scale-in" data-delay="300">
+                            <div class="project-image">
+                                <img src="../../img/finapp.png" alt="FinApp - Fintech application" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Fintech</span>
+                                <h3 class="project-title">FinApp</h3>
+                                <p class="project-description">Fintech application offering secure transactions, real-time analytics, automated processes and a seamless user experience.</p>
+                                <div class="project-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">NodeJS</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/FinApp" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View FinApp source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://finapp-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View FinApp live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+    </main>
+
+    <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <img src="../../img/favicon.png" alt="JR Logo" width="28" height="24">
+                            <span>Jhoan J. Ramirez</span>
+                        </a>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#contact" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Work</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contributions">Contributions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                            <li><a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                            <li><a href="#contact">Contact form</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2026 Jhoan J. Ramirez. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    <script src="../../main.js" defer></script>
+</body>
+</html>

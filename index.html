@@ -1,280 +1,601 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <title>Dojhoanrd-jw</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#004aad">
+    <meta name="author" content="Jhoan J. Ramirez">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"
+            integrity="sha384-WkEPiGpA8IY4DDeMxmVWYU+J3FdQ1CUSC9w1HiBdQOAk79Zwdbog/5HHsl3keRaM"
+            crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <img src="img/favicon.png" alt="Logo" class="logo">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#projects-section">Projects</a>
-                <a href="#skills-section">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-        <div class="buttons-container">
-            <button class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-    <section class="hero" id="home">
-        <div class="profile-container">
-            <h1>Hello, I am Jhoan J. Ramirez</h1>
-            <p class="title">Software Developer</p>
-            <a href="#projects-section" class="cta-button">Projects</a>
-        </div>
-    </section>
-    <section class="project-section" id="projects-section">
-        <h2>PROJECTS</h2>
-        <div class="projects-container" id="projects-container">
-            <div class="project-card">
-                <img src="img/ToDoPro.png" alt="ToDoPro">
-                <div class="card-content">
-                    <h3>ToDoPro</h3>
-                    <div class="tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag" translate="no">React</span>
-                        <span class="tag" translate="no">Firebase</span>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <header id="site-header">
+            <nav aria-label="Main navigation">
+                <a href="#home" class="nav-logo" aria-label="Home">
+                    <img src="img/favicon.png" alt="JR Logo" width="30" height="26">
+                </a>
+                <div class="nav-links" id="nav-links" role="menubar">
+                    <a href="#home" role="menuitem" class="nav-link active" data-section="home">Home</a>
+                    <a href="#skills" role="menuitem" class="nav-link" data-section="skills">Skills</a>
+                    <a href="#projects" role="menuitem" class="nav-link" data-section="projects">Projects</a>
+                    <a href="#contributions" role="menuitem" class="nav-link" data-section="contributions">Contributions</a>
+                    <a href="#contact" role="menuitem" class="nav-link" data-section="contact">Contact</a>
+                    <button class="theme-toggle theme-toggle-mobile" type="button" aria-label="Toggle color theme">
+                        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                    </button>
+                    <div class="nav-indicator" id="nav-indicator"></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle theme-toggle-desktop" type="button" aria-label="Toggle color theme">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </header>
+
+    <main>
+        <section class="hero" id="home">
+                    <canvas id="hero-canvas"></canvas>
+                    <noscript>
+                        <p class="noscript-banner">This portfolio uses JavaScript for animations and interactive features. Content remains fully accessible without it.</p>
+                    </noscript>
+                    <div class="hero-grid">
+                        <div class="hero-content">
+                            <p class="hero-greeting">Hello, I am</p>
+                            <h1 class="hero-name">
+                                <span class="gradient-text">Jhoan J. Ramirez</span>
+                            </h1>
+                            <div class="hero-role">
+                                <span class="role-prefix">A&nbsp;</span>
+                                <span class="role-text">System Engineer</span>
+                            </div>
+                            <p class="hero-description">Passionate about building digital solutions that optimize processes, enhance user experience, and adapt to the ever-changing technological landscape.</p>
+                            <div class="hero-cta">
+                                <a href="#projects" class="btn btn-primary">View Projects</a>
+                                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                            </div>
+                        </div>
+                        <div class="hero-globe" id="hero-globe" aria-hidden="true"></div>
                     </div>
-                    <p>Project and task management platform with intuitive boards, customizable workflows, and real-time collaboration. Allows you to organize, prioritize, and efficiently track each task.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/ToDoPro" class="code-btn" target="_blank">Code</a>
-                        <a href="https://todopro-proj.web.app/" class="demo-btn" target="_blank">Demo</a>
+                </section>
+        <section class="skills-section" id="skills">
+                    <div class="section-header" data-animate="fade-up">
+                        <span class="section-tag">Capabilities</span>
+                        <h2 class="section-title">Skills &amp; Technologies</h2>
+                        <p class="section-subtitle">Pick a category to explore the technologies and concepts I work with.</p>
                     </div>
+                    <div class="skills-tabs" data-animate="fade-up" data-delay="200">
+                        <button class="skill-tab active" data-tab="frontend">
+                            <i class="fa-solid fa-window-maximize"></i> Frontend
+                        </button>
+                        <button class="skill-tab" data-tab="backend">
+                            <i class="fa-solid fa-server"></i> Backend
+                        </button>
+                        <button class="skill-tab" data-tab="databases">
+                            <i class="fa-solid fa-database"></i> Databases
+                        </button>
+                        <button class="skill-tab" data-tab="mobile">
+                            <i class="fa-solid fa-mobile-screen-button"></i> Mobile
+                        </button>
+                        <button class="skill-tab" data-tab="cloud-devops">
+                            <i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps Architecture
+                        </button>
+                        <button class="skill-tab" data-tab="ai">
+                            <i class="fa-solid fa-brain"></i> AI
+                        </button>
+                    </div>
+                    <div class="skills-panels">
+                        <div class="skills-panel active" id="panel-frontend">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">JavaScript / TypeScript</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="fab fa-react"></i><span>React</span></div>
+                                        <div class="skill-item"><i class="fa-brands fa-angular"></i><span>Angular</span></div>
+                                        <div class="skill-item"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
+                                        <div class="skill-item"><i class="devicon-nextjs-plain colored"></i><span>Next.js</span></div>
+                                        <div class="skill-item"><i class="devicon-nuxtjs-plain colored"></i><span>Nuxt.js</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Dart</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><iconify-icon icon="logos:flutter"></iconify-icon><span>Flutter</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-panel" id="panel-backend">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Node.js</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">C#</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="devicon-dot-net-plain colored"></i><span>.NET</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Python</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="bx bxl-django"></i><span>Django</span></div>
+                                        <div class="skill-item"><i class="bx bxl-flask"></i><span>Flask</span></div>
+                                        <div class="skill-item"><iconify-icon icon="logos:fastapi-icon"></iconify-icon><span>FastAPI</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Other Languages</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="devicon-go-plain colored"></i><span>Go</span></div>
+                                        <div class="skill-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-panel" id="panel-databases">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Relational (SQL)</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+                                        <div class="skill-item"><i class="bx bxl-postgresql"></i><span>PostgreSQL</span></div>
+                                        <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">NoSQL &amp; Cache</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+                                        <div class="skill-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-panel" id="panel-mobile">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Cross-Platform Frameworks</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="fab fa-react"></i><span>React Native</span></div>
+                                        <div class="skill-item"><iconify-icon icon="logos:flutter"></iconify-icon><span>Flutter</span></div>
+                                        <div class="skill-item"><i class="devicon-dot-net-plain colored"></i><span>.NET MAUI</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-panel" id="panel-cloud-devops">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Cloud Providers</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+                                        <div class="skill-item"><iconify-icon icon="logos:google-cloud"></iconify-icon><span>GCP</span></div>
+                                        <div class="skill-item"><i class="devicon-azure-plain colored"></i><span>Azure</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Containers &amp; Orchestration</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><iconify-icon icon="logos:docker-icon"></iconify-icon><span>Docker</span></div>
+                                        <div class="skill-item"><i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">IaC &amp; Automation</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="devicon-terraform-plain colored"></i><span>Terraform</span></div>
+                                        <div class="skill-item"><i class="fab fa-github"></i><span>GitHub Actions</span></div>
+                                        <div class="skill-item"><i class="devicon-ansible-plain colored"></i><span>Ansible</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Observability</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="si si--color si-prometheus"></i><span>Prometheus</span></div>
+                                        <div class="skill-item"><i class="si si--color si-grafana"></i><span>Grafana</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills-panel" id="panel-ai">
+                            <div class="skills-content">
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Orchestration</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="si si--color si-langchain"></i><span>LangChain</span></div>
+                                        <div class="skill-item"><i class="logo-llamaindex" aria-hidden="true"></i><span>LlamaIndex</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Models &amp; APIs</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><iconify-icon icon="logos:openai-icon"></iconify-icon><span>OpenAI</span></div>
+                                        <div class="skill-item"><i class="si si--color si-claude"></i><span>Claude</span></div>
+                                        <div class="skill-item"><i class="si si--color si-ollama"></i><span>Ollama (Llama 3)</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Deep Learning</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><i class="si si--color si-tensorflow"></i><span>TensorFlow</span></div>
+                                        <div class="skill-item"><i class="si si--color si-pytorch"></i><span>PyTorch</span></div>
+                                    </div>
+                                </div>
+                                <div class="skill-subgroup">
+                                    <h4 class="skill-subgroup-title">Vector Databases</h4>
+                                    <div class="skill-subgroup-items">
+                                        <div class="skill-item"><iconify-icon icon="logos:pinecone-icon"></iconify-icon><span>Pinecone</span></div>
+                                        <div class="skill-item"><i class="si si--color si-milvus"></i><span>Milvus</span></div>
+                                        <div class="skill-item"><iconify-icon icon="logos:chroma"></iconify-icon><span>ChromaDB</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        <section class="projects-section" id="projects">
+                    <div class="section-header section-header-row" data-animate="fade-up">
+                        <div class="section-header-left">
+                            <span class="section-tag">My Work</span>
+                            <h2 class="section-title">Projects</h2>
+                            <p class="section-subtitle">A selection of recent work — from full-stack apps to AI experiments.</p>
+                        </div>
+                        <a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" class="section-link">
+                            View all on GitHub
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="projects-grid" id="projects-grid">
+                        <article class="project-card" data-category="productivity" data-animate="scale-in" data-delay="100">
+                            <div class="project-image">
+                                <img src="img/todopro.png" alt="ToDoPro - Project and task management platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Productivity</span>
+                                <h3 class="project-title">ToDoPro</h3>
+                                <p class="project-description">Project and task management platform with intuitive boards, customizable workflows, and real-time collaboration.</p>
+                                <div class="project-tags">
+                                    <span class="tag">JavaScript</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">Firebase</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/ToDoPro" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View ToDoPro source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://todopro-proj.web.app/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View ToDoPro live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="entertainment" data-animate="scale-in" data-delay="200">
+                            <div class="project-image">
+                                <img src="img/moviesearch.png" alt="Movie Search - Movie information search app" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Entertainment</span>
+                                <h3 class="project-title">Movie Search</h3>
+                                <p class="project-description">Web app for searching movie information — title, synopsis, rating, cast, release date and genre, all in a responsive interface.</p>
+                                <div class="project-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">React</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Movie-search" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Movie Search source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://movie-search-proj.web.app/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Movie Search live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="retail" data-animate="scale-in" data-delay="300">
+                            <div class="project-image">
+                                <img src="img/ecommerce.png" alt="E-commerce - Online shopping platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Retail</span>
+                                <h3 class="project-title">E-commerce</h3>
+                                <p class="project-description">Online marketplace with shopping cart, secure payments, order management, user reviews and a recommendation system.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Angular</span>
+                                    <span class="tag">.NET</span>
+                                    <span class="tag">PostgreSQL</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/E-commerce" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View E-commerce source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://e-commerce-1-1mki.onrender.com" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View E-commerce live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="ai" data-animate="scale-in" data-delay="100">
+                            <div class="project-image">
+                                <img src="img/taskbot.png" alt="Taskbot - Multi-chatbot integration platform" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">AI Tools</span>
+                                <h3 class="project-title">Taskbot</h3>
+                                <p class="project-description">Web app that integrates multiple chatbots to automate document editing, code generation, icon design and data analysis tasks.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Vue.js</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Taskbot" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Taskbot source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://taskbot-proj.netlify.app" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Taskbot live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="data" data-animate="scale-in" data-delay="200">
+                            <div class="project-image">
+                                <img src="img/datanalisis.png" alt="Datanalisis - Data analysis web application" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Data Analytics</span>
+                                <h3 class="project-title">Datanalisis</h3>
+                                <p class="project-description">Web app designed to make data analysis intuitive — explore, process and visualize datasets quickly and easily.</p>
+                                <div class="project-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Django</span>
+                                    <span class="tag">Pandas</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/Datanalisis" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View Datanalisis source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://datanalisis.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View Datanalisis live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="fintech" data-animate="scale-in" data-delay="300">
+                            <div class="project-image">
+                                <img src="img/finapp.png" alt="FinApp - Fintech application" loading="lazy">
+                            </div>
+                            <div class="project-info">
+                                <span class="project-category">Fintech</span>
+                                <h3 class="project-title">FinApp</h3>
+                                <p class="project-description">Fintech application offering secure transactions, real-time analytics, automated processes and a seamless user experience.</p>
+                                <div class="project-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">NodeJS</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/dojhoanrd-jw/FinApp" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View FinApp source code">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="https://finapp-beta.vercel.app" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View FinApp live demo">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="projects-cta" data-animate="fade-up">
+                        <a href="pages/projects/" class="btn btn-primary">
+                            <span>View All Projects</span>
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </section>
+        <section class="contributions-section" id="contributions">
+                    <div class="section-header" data-animate="fade-up">
+                        <span class="section-tag">Open Source</span>
+                        <h2 class="section-title">Contributions</h2>
+                        <p class="section-subtitle">Code contributions to open-source projects I use and believe in.</p>
+                    </div>
+                    <div class="contributions-grid">
+                        <article class="contribution-card" data-animate="fade-up" data-delay="100">
+                            <div class="contribution-logo">
+                                <img src="https://raw.githubusercontent.com/TanStack/tanstack.com/main/public/images/logos/logo-color-600.png" alt="TanStack" loading="lazy">
+                            </div>
+                            <div class="contribution-info">
+                                <div class="contribution-meta">
+                                    <span class="contribution-role">Contributor</span>
+                                    <span class="contribution-stars"><i class="fa-solid fa-star"></i> Open Source</span>
+                                </div>
+                                <h3 class="contribution-title">TanStack Form</h3>
+                                <p class="contribution-description">Type-safe, framework-agnostic form state management for React, Vue, Solid, Svelte and Angular. Contributed code improvements and fixes to the core library.</p>
+                                <div class="contribution-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">Forms</span>
+                                </div>
+                                <div class="contribution-actions">
+                                    <a href="https://github.com/TanStack/form/commits/main/?author=dojhoanrd-jw" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="View my commits to TanStack Form">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                        <span>My Commits</span>
+                                    </a>
+                                    <a href="https://tanstack.com/form" target="_blank" rel="noopener noreferrer" class="project-action project-action-primary" aria-label="View TanStack Form documentation">
+                                        <span>Docs</span>
+                                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+        <section class="contact-section" id="contact">
+                    <div class="section-header" data-animate="fade-up">
+                        <span class="section-tag">Get in Touch</span>
+                        <h2 class="section-title">Contact</h2>
+                    </div>
+                    <div class="contact-wrapper" data-animate="fade-up" data-delay="200">
+                        <div class="contact-info">
+                            <p class="contact-description">Do you have any questions or want to collaborate with me? Don't hesitate to contact me!</p>
+                            <div class="contact-links">
+                                <a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <div>
+                                        <span class="link-label">LinkedIn</span>
+                                        <span class="link-value">dojhoanrd-jw</span>
+                                    </div>
+                                </a>
+                                <a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                                    <i class="fab fa-github"></i>
+                                    <div>
+                                        <span class="link-label">GitHub</span>
+                                        <span class="link-value">dojhoanrd-jw</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <form action="https://getform.io/f/alllopva" method="post" class="contact-form" id="contact-form" novalidate>
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder=" " required autocomplete="name">
+                                <label for="name">Name</label>
+                                <span class="form-error" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                                <label for="email">Email</label>
+                                <span class="form-error" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder=" " required></textarea>
+                                <label for="message">Message</label>
+                                <span class="form-error" aria-live="polite"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" aria-hidden="true"><i class="fas fa-spinner fa-spin"></i></span>
+                                <span class="btn-success" aria-hidden="true"><i class="fas fa-check"></i> Sent!</span>
+                            </button>
+                        </form>
+                    </div>
+                </section>
+    </main>
+
+    <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#home" class="footer-logo">
+                            <img src="img/favicon.png" alt="JR Logo" width="28" height="24">
+                            <span>Jhoan J. Ramirez</span>
+                        </a>
+                        <div class="footer-social">
+                            <a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#contact" aria-label="Email">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Work</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contributions">Contributions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Connect</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                            <li><a href="https://github.com/dojhoanrd-jw" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                            <li><a href="#contact">Contact form</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2026 Jhoan J. Ramirez. All rights reserved.</p>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="img/MovieSearch.png" alt="MovieSearch">
-                <div class="card-content">
-                    <h3>Movie Search</h3>
-                    <div class="tags">
-                        <span class="tag" translate="no">TypeScript</span>
-                        <span class="tag" translate="no" >React</span>
-                    </div>
-                    <p>It's a web app for searching movie information, displaying details like title, synopsis, rating, cast, release date, and genre in an intuitive and responsive interface, enhancing user experience.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/Movie-search" class="code-btn" target="_blank">Code</a>
-                        <a href="https://movie-search-proj.web.app/" class="demo-btn" target="_blank">Demo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/Ecommerce.png" alt="Ecommerce">
-                <div class="card-content">
-                    <h3>E-commerce</h3>
-                    <div class="tags">
-                        <span class="tag">Angular</span>
-                        <span class="tag" translate="no">.Net</span>
-                        <span class="tag" translate="no">PostgreSql</span>
-                    </div>
-                    <p>Web application for buying and selling products online, featuring a shopping cart, secure payments, order management, user reviews, and a recommendation system for better shopping.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/E-commerce" class="code-btn" target="_blank">Code</a>
-                        <a href="https://e-commerce-1-1mki.onrender.com" class="demo-btn" target="_blank">Demo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/Taskbot.png" alt="Taskbot">
-                <div class="card-content">
-                    <h3>Taskbot</h3>
-                    <div class="tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag" translate="no">Python</span>
-                    </div>
-                    <p>It is a web application that integrates multiple chatbots to automate tasks like document editing, code generation, icon design, and data analysis, offering a fast, intuitive, and efficient experience.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/Taskbot" class="code-btn" target="_blank">Code</a>
-                        <a href="https://taskbot-proj.netlify.app" class="demo-btn" target="_blank">Demo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/Datanalisis.png" alt="Datanalisis">
-                <div class="card-content">
-                    <h3>Datanalisis</h3>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag" translate="no">Django</span>
-                        <span class="tag" translate="no">Pandas</span>
-                    </div>
-                    <p>This is a web application designed to facilitate data analysis in an intuitive and efficient way. The project is aimed at users who want to explore, process, and visualize datasets quickly and easily.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/Datanalisis" class="code-btn" target="_blank">Code</a>
-                        <a href="https://datanalisis.onrender.com/" class="demo-btn" target="_blank">Demo</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="img/FinApp.png" alt="FinApp">
-                <div class="card-content">
-                    <h3>FinApp</h3>
-                    <div class="tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag" translate="no">NodeJS</span>
-                    </div>
-                    <p>This project is a fintech application designed to offer innovative solutions in the world of finance, providing secure transactions, real-time analytics, automated processes, and seamless user experience.</p>
-                    <div class="buttons">
-                        <a href="https://github.com/dojhoanrd-jw/FinApp" class="code-btn" target="_blank">Code</a>
-                        <a href="https://finapp-beta.vercel.app" class="demo-btn" target="_blank">Demo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="skills-section" id="skills-section">
-        <h2 class="skills-title">SKILLS</h2>
-        <div class="skills-container" id="skills-container">
-            <div class="skill-category">
-                <div class="category-title">
-                    <i class="fas fa-code"></i>
-                    <h3>Lenguage</h3>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">JavaScript</h4>
-                    <div class="skills-list">
-                        <span class="skill-item" translate="no">
-                            <i class='bx bxl-typescript'></i>TypeScript
-                        </span>
-                        <span class="skill-item" translate="no">
-                            <i class="fab fa-react"></i>React
-                        </span>
-                        <span class="skill-item" translate="no">
-                            <i class="fab fa-react"></i>React Native
-                        </span>
-                        <span class="skill-item">
-                            <i class="fa-brands fa-angular"></i>Angular
-                        </span>
-                        <span class="skill-item">
-                            <i class="fa-brands fa-vuejs"></i>Vue.JS
-                        </span>
-                        <span class="skill-item" translate="no">
-                            <i class="fa-brands fa-node-js"></i>Node.JS
-                        </span>
-                    </div>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title" translate="no">C#</h4>
-                    <div class="skills-list">
-                        <span class="skill-item" translate="no">
-                            <i class="fa-solid fa-square"></i>.NET 
-                        </span>
-                    </div>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title" translate="no">Python</h4>
-                    <div class="skills-list" translate="no">
-                        <span class="skill-item">
-                            <i class='bx bxl-flask'></i>Flask
-                        </span>
-                        <span class="skill-item">
-                            <i class='bx bxl-django'></i>Django
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <div class="category-title">
-                    <i class="fa-solid fa-database"></i>
-                    <h3>Data Base</h3>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">Realational Data Base</h4>
-                    <div class="skills-list">
-                        <span class="skill-item" translate="no">           
-                            <i class="devicon-microsoftsqlserver-plain"></i>Sql Server
-                        </span>
-                        <span class="skill-item">                        
-                            <i class="devicon-mysql-original"></i>MySql
-                        </span>
-                        <span class="skill-item">
-                            <i class='bx bxl-postgresql'></i>PostgreSql
-                        </span>
-                    </div>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">Non-Relactional Data Base</h4>
-                    <div class="skills-list">
-                        <span class="skill-item">                        
-                            <i class="devicon-mongodb-plain"></i>MongoDB
-                        </span>
-                        <span class="skill-item">          
-                            <i class="devicon-redis-plain"></i>Redis
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <div class="category-title">
-                    <i class="fas fa-tools"></i>
-                    <h3>Other Tecnology</h3>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">Cloud</h4>
-                    <div class="skills-list">
-                        <span class="skill-item" translate="no">
-                            <i class="fab fa-git-alt"></i>AWS
-                        </span>
-                        <span class="skill-item" translate="no">
-                            <i class="devicon-azure-plain"></i>Azure
-                        </span>
-                        <span class="skill-item" translate="no">
-                            <i class="devicon-googlecloud-plain"></i>Google Cloud
-                        </span>
-                    </div>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">Version Control</h4>
-                    <div class="skills-list">
-                        <span class="skill-item">
-                            <i class="fab fa-git-alt"></i>Git
-                        </span>
-                        <span class="skill-item">
-                            <i class="fab fa-github"></i>GitHub
-                        </span>
-                    </div>
-                </div>
-                <div class="subcategory">
-                    <h4 class="subcategory-title">Containers</h4>
-                    <div class="skills-list">
-                        <span class="skill-item" translate="no">
-                            <i class="devicon-docker-plain"></i>Docker
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Do you have any questions or want to collaborate with me? Don't hesitate to contact me!</p>
-        <div class="social-networks">
-            <a href="https://www.linkedin.com/in/dojhoanrd-jw" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/dojhoanrd-jw" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-        <form action="https://getform.io/f/alllopva" method="post" class="contact-form">
-            <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <textarea id="message" name="message" placeholder="Message" required></textarea>
-            </div>
-            <button type="submit" class="send-button">Send Message</button>
-        </form>
-    </section>
+        </footer>
+
+    <script src="main.js" defer></script>
+    <script>
+        // Lazy-load Three.js + RoundedBoxGeometry + squares.js only when the hero is in viewport
+        (function () {
+            const target = document.getElementById('hero-globe');
+            if (!target) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+            function loadScript(src, integrity) {
+                return new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.src = src;
+                    if (integrity) {
+                        s.integrity = integrity;
+                        s.crossOrigin = 'anonymous';
+                    }
+                    s.onload = resolve;
+                    s.onerror = reject;
+                    document.head.appendChild(s);
+                });
+            }
+    
+            function bootGlobe() {
+                loadScript('https://unpkg.com/three@0.146.0/build/three.min.js',
+                           'sha384-x9wDJy7yFtLLFyV/D2Aw4FtythXqOQNmB5PthOB+IlnSFXvS8/Kx7IzPEZWDgH7P')
+                    .then(() => loadScript('https://unpkg.com/three@0.146.0/examples/js/geometries/RoundedBoxGeometry.js',
+                                           'sha384-EaVrsT3xCq/z7jaO1D8J5q+KotYHdHYt5FzpSzPgqJ0bLYtQz1nbTXowXiA3Mleu'))
+                    .then(() => loadScript('animations/squares.js'))
+                    .catch((err) => console.warn('[squares] lazy load failed', err));
+            }
+    
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, obs) => {
+                    if (entries.some((e) => e.isIntersecting)) {
+                        obs.disconnect();
+                        bootGlobe();
+                    }
+                }, { rootMargin: '200px' });
+                io.observe(target);
+            } else {
+                bootGlobe();
+            }
+        })();
+        </script>
 </body>
 </html>
-
