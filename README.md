@@ -66,20 +66,3 @@ I am motivated by the constant evolution of the industry and how software can tr
 ## 🤝 Open Source Contributions
 
 [![TanStack](https://img.shields.io/static/v1?label=&message=TanStack%20Form&color=000000&labelColor=ffffff&logo=tanstack&logoColor=000000&style=flat)](https://github.com/TanStack/form/commits/main/?author=dojhoanrd-jw)
-
----
-
-## 📫 Contact
-
-Feel free to reach out if you want to collaborate or need help with a project:
-
-- LinkedIn: [Jhoan J. Ramirez](https://www.linkedin.com/in/dojhoanrd-jw/)
-- Portfolio: [dojhoanrd-jw.github.io](https://dojhoanrd-jw.github.io/)
-
----
-
-<div align="center">
-
-⭐ **Don't forget to follow me and star my projects if you like them!**
-
-</div>
