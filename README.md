@@ -12,7 +12,7 @@
 
 <div align="justify">
 
-Passionate about software development and its ability to drive innovation. I focus on designing and building digital solutions that optimize processes, enhance user experience, and adapt to the ever-changing technological landscape.
+Passionate about building digital solutions that optimize processes, enhance user experience, and adapt to the ever-changing technological landscape.
 
 </div>
 
