@@ -14,8 +14,6 @@
 
 Passionate about software development and its ability to drive innovation. I focus on designing and building digital solutions that optimize processes, enhance user experience, and adapt to the ever-changing technological landscape.
 
-I am motivated by the constant evolution of the industry and how software can transform sectors, automate tasks, and create a real impact. Always seeking new strategies, methodologies, and tools to develop more efficient, scalable, and sustainable products.
-
 </div>
 
 ---
